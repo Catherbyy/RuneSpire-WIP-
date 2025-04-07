@@ -15,6 +15,7 @@ A turn-based, RuneScape-themed card battle game inspired by **Slay the Spire** �
    ```bash
    python game.py 
 
+```
 runespire/
 ├── game.py          # main game loop
 ├── cards.py         # card definitions
