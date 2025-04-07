@@ -4,12 +4,14 @@ from enemy import Enemy
 
 def main():
     player = Player()
-    enemy = Enemy()
+    enemy = Enemy() 
+    enemy.decide_intent()
 
     print("--- RuneSpire: Battle Start! ---")
 
     while player.health > 0 and enemy.health > 0:
         print("\n--- Your Turn ---")
+        print(f"Enemy intends to: {enemy.intent}")
         player.energy = 3
         player.block = 0
         enemy.block = 0
@@ -49,6 +51,8 @@ def main():
         print("\n--- Enemy Turn ---")
         time.sleep(1)
         enemy.act(player)
+        enemy.decide_intent()  # ← ADD THIS AFTER ENEMY ACTS
+
 
     if player.health <= 0:
         print("\nYou were defeated...")
